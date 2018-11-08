@@ -10,7 +10,7 @@ namespace App.Model
     {
         private int pickedMove = -1;
 
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Name { get; set; }
         public IPokemon ActivePokemon { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public bool Ready => throw new NotImplementedException();
