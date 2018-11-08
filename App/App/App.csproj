@@ -53,6 +53,9 @@
     </Compile>
     <Compile Include="Model\AI.cs" />
     <Compile Include="Model\GameLoop.cs" />
+    <Compile Include="Model\IMove.cs" />
+    <Compile Include="Model\IPokemon.cs" />
+    <Compile Include="Model\ITrainer.cs" />
     <Compile Include="Model\Pokemon.cs" />
     <Compile Include="Model\Trainer.cs" />
     <Compile Include="Program.cs" />

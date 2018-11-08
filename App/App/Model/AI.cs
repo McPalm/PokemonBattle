@@ -8,7 +8,7 @@ namespace App.Model
 {
     public class AI : Trainer
     {
-        public AI(string name) : base(name) { }
+        public AI(string name) { }
         /// <summary>
         /// AI picks an appropiate move to use.
         /// As long as the state allows it, should always return a move.
@@ -16,6 +16,6 @@ namespace App.Model
         /// </summary>
         /// <param name="move"></param>
         /// <returns></returns>
-        public override bool TryGetMove(out Move move) => throw new NotImplementedException();
+        public new bool TryGetMove(out Move move) => throw new NotImplementedException();
     }
 }

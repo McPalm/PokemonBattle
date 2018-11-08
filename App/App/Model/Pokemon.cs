@@ -6,62 +6,40 @@ using System.Threading.Tasks;
 
 namespace App.Model
 {
-    public class Pokemon
+    public class Pokemon : IPokemon
     {
-        public Pokemon(string name) => throw new NotImplementedException();
+        public List<IMove> Moves => throw new NotImplementedException();
 
-        /// <summary>
-        /// List of the pokemons available moves
-        /// </summary>
-        public List<Move> Moves { get; private set; }
+        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        /// <summary>
-        /// Name of teh pokemon, needs to be bewteen 1 and 10 characters
-        /// </summary>
-        public string Name { get; set; }
-        /// <summary>
-        /// Current health the pokemon has, defaults to full health (max health)
-        /// </summary>
-        public int Health { get; private set; }
-        /// <summary>
-        /// Invoked whenever the current health on the pokemon changes
-        /// </summary>
-        public Action<int> OnHealthChange { get; set; }
-        /// <summary>
-        /// apply hitpoint damage to the pokemon, cannot reduce pokemon below 0, 
-        /// </summary>
-        /// <param name="dmg"></param>
-        public void Hurt(int dmg) =>  throw new NotImplementedException();
-        /// <summary>
-        /// Restore hitpoints on the pokemon, will not increase above 
-        /// </summary>
-        /// <param name="heal"></param>
-        public void Heal(int heal) => throw new NotImplementedException();
+        public int Health => throw new NotImplementedException();
 
-        /// <summary>
-        /// Use the given move on the given pokemon
-        /// </summary>
-        /// <param name="move">must be one of the pokemons moves, if not, return false</param>
-        /// <param name="target"></param>
-        /// <returns>false if the move fails for some reason</returns>
-        public bool UseMove(Move move, Pokemon target) => throw new NotImplementedException();
+        public Action<int> OnHealthChange { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Action OnKnockout { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Attack { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Defence { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int SpAttack { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int SpDefence { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Speed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        /// <summary>
-        /// invoked when the pokemons is knocked out (reaches 0)
-        /// </summary>
-        public Action OnKnockout { get; set; }
+        public bool CanAct => throw new NotImplementedException();
 
-        ///
-        /// All attributes default to 5
-        
-        public int MaxHealth { get; set; }
-        public int Attack { get; set; }
-        public int Defence { get; set; }
-        public int SpAttack { get; set; }
-        public int SpDefence { get; set; }
-        public int Speed { get; set; }
+        public bool KnockedOut => throw new NotImplementedException();
 
-        public bool CanAct { get => true; }
-        public bool KnockedOut { get => true; }
+        public void Heal(int heal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Hurt(int dmg)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UseMove(IMove move, IPokemon target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
