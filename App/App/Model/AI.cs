@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.Model
 {
-    class AI : Trainer
+    public class AI : Trainer
     {
         public AI(string name) : base(name) { }
         /// <summary>

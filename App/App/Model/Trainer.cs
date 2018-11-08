@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.Model
 {
-    class Trainer
+    public class Trainer
     {
         /// <summary>
         /// Name of the character

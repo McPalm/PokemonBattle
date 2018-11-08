@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.Model
 {
-    class Move
+    public class Move
     {
         public string Name { set; get; }
 		public int BaseDamage { set; get; }

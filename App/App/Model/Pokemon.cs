@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.Model
 {
-    class Pokemon
+    public class Pokemon
     {
         public Pokemon(string name) => throw new NotImplementedException();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.Model
 {
-    class GameLoop
+    public class GameLoop
     {
         public Trainer Trainer1 { get; set; }
         public Trainer Trainer2 { get; set; }
