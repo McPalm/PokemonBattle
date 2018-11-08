@@ -8,6 +8,8 @@ namespace App.Model
 {
     public class Trainer
     {
+        private int pickedMove = -1;
+
         /// <summary>
         /// Name of the character
         /// </summary>
@@ -17,7 +19,15 @@ namespace App.Model
         /// </summary>
         /// <param name="move">must be between 0 and the number of moves the pokemon possess</param>
         /// <returns>false if specified move cannot be used, or if the input is out of range</returns>
-        public bool UseMove(int move) => throw new NotImplementedException();
+        public bool UseMove(int move)
+        {
+            if(move < ActivePokemon.Moves.Count && move > 0)
+            {
+                pickedMove = move;
+                return true;
+            }
+            return false;
+        }
         /// <summary>
         /// An active pokemon, can be null, if null, cant use moves, wont be ready
         /// </summary>

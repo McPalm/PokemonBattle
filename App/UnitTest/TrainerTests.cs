@@ -2,6 +2,7 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using App.Model;
 using System.Collections.Generic;
+using Moq;
 
 namespace UnitTest
 {
@@ -21,33 +22,21 @@ namespace UnitTest
         public void TestUseMove()
         {
             var trainer = new Trainer("Ash");
-            var pokemon = new MockPokemon("Bulbasaur");
-            var move = new MockMove();
-            pokemon.Moves.Add(move);
-            trainer.UseMove(0);
-
-            if(trainer.TryGetMove(out var move2))
+            var mockPokemon = new Mock<Pokemon>();
+            var list = new List<Move>
             {
-                Assert.AreEqual(move2, move);
+                new Move(),
+                new Move(),
+            };
+            mockPokemon.Setup(po => po.Moves).Returns(list);
+            // trainer.ActivePokemon = pokemon.Object;
+            if(trainer.UseMove(1))
+            {
+                // expected behaviour
             }
             else
             {
                 Assert.Fail("Expected a move to be locked in");
-            }
-        }
-
-
-        private class MockMove : Move
-        {
-
-        }
-
-        private class MockPokemon : Pokemon
-        {
-            new List<Move> Moves = new List<Move>();
-            public MockPokemon(string name) : base(name)
-            {
-                
             }
         }
     }
