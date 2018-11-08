@@ -13,7 +13,7 @@ namespace UnitTest
             var trainer = new Trainer("Ash");
             var expected = "Ash";
             var actual = trainer.Name;
-            Assert.Equals(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

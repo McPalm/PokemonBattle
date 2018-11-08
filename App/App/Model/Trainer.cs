@@ -31,7 +31,7 @@ namespace App.Model
         /// New instance of a trainer
         /// </summary>
         /// <param name="name">name of trainer</param>
-        public Trainer(string name) => throw new NotImplementedException();
+        public Trainer(string name) => Name = name;
         /// <summary>
         /// Selected move
         /// </summary>
