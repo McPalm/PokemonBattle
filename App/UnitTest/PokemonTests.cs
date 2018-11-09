@@ -133,8 +133,19 @@ namespace UnitTest
         }
 
         // test UseMove
+        // implement in tandem with the move class
 
         // test that we can add and remove move
+        [TestMethod]
+        public void AddRemoveMoves()
+        {
+            var pokemon = new Pokemon();
+            var move = new Mock<IMove>().Object;
+            pokemon.Moves.Add(move);
+            Assert.AreEqual(pokemon.Moves.Count, 1);
+            Assert.AreSame(pokemon.Moves[0], move);
+            // were basically just testing if List works here. kinda redundant. But we need to make sure it is initialized properly.
+        }
 
         // test the OnKnockoutEvent
 
