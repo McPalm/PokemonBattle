@@ -84,6 +84,12 @@ namespace UnitTest
         }
 
         // test that current health starts at full
+        [TestMethod]
+        public void StartHealthMax()
+        {
+            Pokemon pokemon = new Pokemon();
+            Assert.AreEqual(pokemon.Health, pokemon.MaxHealth);
+        }
 
         // est that current health floors at 0
 
