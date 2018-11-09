@@ -37,7 +37,27 @@ namespace UnitTest
             Assert.AreEqual(pokemon.Speed, 15);
         }
 
-        
+        [TestMethod]
+        public void FaultyAttributesTest()
+        {
+            var pokemon = new Pokemon()
+            {
+                MaxHealth = -1,
+                Attack = 0,
+                Defence = -6,
+                SpAttack = -7,
+                SpDefence = 0,
+                Speed = -168745,
+            };
+            Assert.IsTrue(pokemon.MaxHealth > 0);
+            Assert.IsTrue(pokemon.Attack > 0);
+            Assert.IsTrue(pokemon.Defence > 0);
+            Assert.IsTrue(pokemon.SpAttack > 0);
+            Assert.IsTrue(pokemon.SpDefence > 0);
+            Assert.IsTrue(pokemon.Speed > 0);
+        }
+
+
 
         // test that current health starts at full
 

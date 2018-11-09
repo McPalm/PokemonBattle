@@ -51,6 +51,7 @@ namespace App.Model
 
         ///
         /// All attributes default to 5
+        /// Attributes cannot go below 1
 
         int MaxHealth { get; set; }
         int Attack { get; set; }
