@@ -111,6 +111,26 @@ namespace UnitTest
         }
 
         // test thyat current health ceils at max health
+        [TestMethod]
+        public void HealPokemon()
+        {
+            var pokemon = new Pokemon()
+            {
+                MaxHealth = 5,
+            };
+
+            pokemon.Heal(2);
+            Assert.AreEqual(pokemon.Health, 5);
+
+            pokemon.Hurt(3);
+            Assert.AreEqual(pokemon.Health, 2);
+
+            pokemon.Heal(2);
+            Assert.AreEqual(pokemon.Health, 4);
+
+            pokemon.Heal(2);
+            Assert.AreEqual(pokemon.Health, 5);
+        }
 
         // test UseMove
 
