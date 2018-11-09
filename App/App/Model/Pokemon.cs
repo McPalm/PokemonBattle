@@ -10,7 +10,13 @@ namespace App.Model
     {
         public List<IMove> Moves => throw new NotImplementedException();
 
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Name { get => name; set
+            {
+                if (value.Length > 0 && value.Length <= 10)
+                    name = value;
+            }
+        }
+        private string name = "missingno";
 
         public int Health => throw new NotImplementedException();
 
