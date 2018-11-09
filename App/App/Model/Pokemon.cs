@@ -16,12 +16,12 @@ namespace App.Model
 
         public Action<int> OnHealthChange { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Action OnKnockout { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Attack { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Defence { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int SpAttack { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int SpDefence { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Speed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int MaxHealth { set; get; } = 5;
+        public int Attack { set; get; } = 5;
+        public int Defence { set; get; } = 5;
+        public int SpAttack { set; get; } = 5;
+        public int SpDefence { set; get; } = 5;
+        public int Speed { set; get; } = 5;
 
         public bool CanAct => throw new NotImplementedException();
 
