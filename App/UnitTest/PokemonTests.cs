@@ -92,6 +92,23 @@ namespace UnitTest
         }
 
         // est that current health floors at 0
+        [TestMethod]
+        public void HurtPokemon()
+        {
+            var pokemon = new Pokemon()
+            {
+                MaxHealth = 5,
+            };
+
+            pokemon.Hurt(2);
+            Assert.AreEqual(pokemon.Health, 3);
+
+            pokemon.Hurt(2);
+            Assert.AreEqual(pokemon.Health, 1);
+
+            pokemon.Hurt(2);
+            Assert.AreEqual(pokemon.Health, 0);
+        }
 
         // test thyat current health ceils at max health
 
