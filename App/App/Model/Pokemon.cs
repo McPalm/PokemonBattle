@@ -42,7 +42,8 @@ namespace App.Model
 
         public void Heal(int heal)
         {
-            throw new NotImplementedException();
+            damage -= heal;
+            damage = Math.Max(0, damage);
         }
 
         public void Hurt(int dmg)
