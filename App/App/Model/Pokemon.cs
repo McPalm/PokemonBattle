@@ -47,7 +47,8 @@ namespace App.Model
 
         public void Hurt(int dmg)
         {
-            throw new NotImplementedException();
+            damage += dmg;
+            damage = Math.Min(damage, MaxHealth);
         }
 
         public bool UseMove(IMove move, IPokemon target)
