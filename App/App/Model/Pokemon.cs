@@ -8,7 +8,7 @@ namespace App.Model
 {
     public class Pokemon : IPokemon
     {
-        public List<IMove> Moves => throw new NotImplementedException();
+        public List<IMove> Moves { get; } = new List<IMove>();
 
         public string Name { get => name; set
             {
