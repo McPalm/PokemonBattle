@@ -15,9 +15,15 @@ namespace App.Model
 
         public bool Ready { private set; get; }
 
-        public bool TryGetMove(out Move move)
+        public bool TryGetMove(out IMove move)
         {
-            throw new NotImplementedException();
+            if(Ready)
+            {
+                move = ActivePokemon?.Moves?[pickedMove];
+                return move != null;
+            }
+            move = null;
+            return false;
         }
 
         public bool UseMove(int move)
