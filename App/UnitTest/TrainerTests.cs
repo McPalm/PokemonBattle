@@ -21,19 +21,19 @@ namespace UnitTest
             Assert.AreEqual(expected, actual);
         }
 
-        /*
+        
         [TestMethod]
         public void TestUseMove()
         {
             var trainer = new Trainer();
-            var mockPokemon = new Mock<Pokemon>();
+            var mockPokemon = new Mock<IPokemon>();
             var list = new List<IMove>
             {
                 new Move(),
                 new Move(),
             };
             mockPokemon.Setup(po => po.Moves).Returns(list);
-            // trainer.ActivePokemon = pokemon.Object;
+            trainer.ActivePokemon = mockPokemon.Object;
             if(trainer.UseMove(1))
             {
                 // expected behaviour
@@ -43,6 +43,6 @@ namespace UnitTest
                 Assert.Fail("Expected a move to be locked in");
             }
         }
-        */
+        
     }
 }
