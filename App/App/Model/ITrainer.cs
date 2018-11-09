@@ -32,6 +32,6 @@ namespace App.Model
         /// </summary>
         /// <param name="move">Selected Move</param>
         /// <returns>True if a move has been selected</returns>
-        bool TryGetMove(out Move move);
+        bool TryGetMove(out IMove move);
     }
 }
