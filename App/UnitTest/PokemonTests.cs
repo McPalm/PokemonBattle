@@ -57,7 +57,31 @@ namespace UnitTest
             Assert.IsTrue(pokemon.Speed > 0);
         }
 
+        // assert that the pokemons name is alwyas between 1 and 10 characters long
+        [TestMethod]
+        public void NameTest()
+        {
+            Predicate<string> validName = s => s.Length > 0 && s.Length <= 10;
 
+            Pokemon pokemon = new Pokemon();
+
+            if (validName(pokemon.Name) == false)
+                Assert.Fail("Pokemon should have a valid name on creation");
+            pokemon.Name = "01234567890";
+            if (validName(pokemon.Name) == false)
+                Assert.Fail("Pokemon should not accept names that are too long");
+            pokemon.Name = "";
+            if (validName(pokemon.Name) == false)
+                Assert.Fail("Pokemon should not accept names that are too short");
+
+            var expected = "bulbasaur";
+            pokemon.Name = expected;
+            Assert.AreEqual(pokemon.Name, expected);
+
+            expected = "tauros";
+            pokemon.Name = expected;
+            Assert.AreEqual(pokemon.Name, expected);
+        }
 
         // test that current health starts at full
 
