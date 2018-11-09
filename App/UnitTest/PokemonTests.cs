@@ -148,6 +148,26 @@ namespace UnitTest
         }
 
         // test the OnKnockoutEvent
+        [TestMethod]
+        public void KnockoutEvent()
+        {
+            var eventTriggered = false;
+            var pokemon = new Pokemon()
+            {
+                MaxHealth = 5,
+                OnKnockout = () => eventTriggered = true,
+            };
+
+            pokemon.Hurt(4);
+            Assert.IsFalse(eventTriggered);
+
+            pokemon.Hurt(4);
+            Assert.IsTrue(eventTriggered);
+
+            eventTriggered = false;
+            pokemon.Hurt(2);
+            Assert.IsFalse(eventTriggered);
+        }
 
         // test the OnHealthChangeEvent
 
