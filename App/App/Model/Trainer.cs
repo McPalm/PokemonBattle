@@ -13,7 +13,7 @@ namespace App.Model
         public string Name { get; set; }
         public IPokemon ActivePokemon { get; set; }
 
-        public bool Ready => throw new NotImplementedException();
+        public bool Ready { private set; get; }
 
         public bool TryGetMove(out Move move)
         {
@@ -22,9 +22,10 @@ namespace App.Model
 
         public bool UseMove(int move)
         {
-            if (move < ActivePokemon.Moves.Count && move > 0)
+            if (move < ActivePokemon.Moves.Count && move >= 0)
             {
                 pickedMove = move;
+                Ready = true;
                 return true;
             }
             return false;
