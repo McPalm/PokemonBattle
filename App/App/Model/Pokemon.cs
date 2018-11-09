@@ -18,7 +18,8 @@ namespace App.Model
         }
         private string name = "missingno";
 
-        public int Health => throw new NotImplementedException();
+        public int Health { get => MaxHealth - damage; }
+        private int damage = 0;
 
         public Action<int> OnHealthChange { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Action OnKnockout { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
